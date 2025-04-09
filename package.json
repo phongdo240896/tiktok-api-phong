@@ -1,12 +1,15 @@
 {
   "name": "tiktok-api-phong",
   "version": "1.0.0",
+  "description": "API scan video TikTok theo hashtag",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
   },
   "dependencies": {
     "express": "^4.18.2",
-    "puppeteer": "^19.11.1"
+    "puppeteer": "^19.11.1",
+    "puppeteer-extra": "^3.3.4",
+    "puppeteer-extra-plugin-stealth": "^2.11.1"
   }
 }

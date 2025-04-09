@@ -1,9 +1,17 @@
-# Docker image có sẵn Chromium + Playwright
-FROM mcr.microsoft.com/playwright/python:v1.43.1-jammy
+FROM node:16
 
-WORKDIR /app
+# Tạo thư mục làm việc
+WORKDIR /usr/src/app
+
+# Sao chép package.json và cài đặt các dependencies
+COPY package.json ./
+RUN npm install
+
+# Sao chép toàn bộ mã nguồn vào container
 COPY . .
 
-RUN pip install --no-cache-dir -r requirements.txt
+# Mở port
+EXPOSE 8080
 
-CMD ["node", "app.js"]
+# Chạy ứng dụng
+CMD ["npm", "start"]

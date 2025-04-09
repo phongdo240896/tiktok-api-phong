@@ -1,17 +1,16 @@
-FROM node:16
+# Sử dụng image Python
+FROM python:3.11
 
-# Tạo thư mục làm việc
+# Cài đặt các thư viện cần thiết
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
+
+# Tạo thư mục ứng dụng và sao chép các file cần thiết
 WORKDIR /usr/src/app
-
-# Sao chép package.json và cài đặt các dependencies
-COPY package.json ./
-RUN npm install
-
-# Sao chép toàn bộ mã nguồn vào container
 COPY . .
 
-# Mở port
-EXPOSE 8080
+# Cài đặt Playwright
+RUN python -m playwright install
 
-# Chạy ứng dụng
-CMD ["npm", "start"]
+# Chạy ứng dụng Python
+CMD ["python", "app.py"]

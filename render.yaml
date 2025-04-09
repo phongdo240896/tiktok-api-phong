@@ -2,4 +2,7 @@ services:
   - type: web
     name: tiktok-api-phong
     env: node
+    buildCommand: |
+      npm install
+    startCommand: npm start
     plan: free

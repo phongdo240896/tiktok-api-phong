@@ -1,5 +1,5 @@
 services:
   - type: web
     name: tiktok-api-phong
-    env: docker
+    env: node
     plan: free

@@ -1,0 +1,14 @@
+{
+  "name": "tiktok-api-phong",
+  "version": "1.0.0",
+  "description": "TikTok Scraper API",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "puppeteer": "^19.0.0",
+    "cors": "^2.8.5"
+  }
+}
